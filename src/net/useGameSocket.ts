@@ -16,8 +16,17 @@ import { createInitialState } from "../../shared/game.ts";
  * be blocked. `ws://` for http pages, `wss://` for https.
  */
 function socketUrl(): string {
-  const proto = window.location.protocol === "https:" ? "wss" : "ws";
-  return `${proto}://${window.location.host}/ws`;
+  // Check if we are running on localhost (development)
+  const isLocalhost =
+    window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1";
+
+  if (isLocalhost) {
+    const proto = window.location.protocol === "https:" ? "wss" : "ws";
+    return `${proto}://${window.location.host}/ws`;
+  }
+
+  return "wss://demon-server.onrender.com";
 }
 
 export interface GameEvents {
