@@ -1,0 +1,33 @@
+:root {
+  --bg: #05060f;
+  --blue: #39d0ff;
+  --gold: #ffd24a;
+  --violet: #7c5cff;
+  --red: #ff3b5c;
+  --panel: rgba(18, 22, 45, 0.72);
+  --line: rgba(120, 160, 255, 0.22);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: #eaf0ff;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}

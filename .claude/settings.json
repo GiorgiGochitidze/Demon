@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npm i *)",
+      "Bash(npx playwright *)",
+      "Bash(SP=/private/tmp/claude-501/-Users-macbook-Desktop-untitled-folder-2/18f2e943-c00d-42cc-b3e2-02206b852e7f/scratchpad node --input-type=module -e ' *)",
+      "Bash(xargs kill)",
+      "Bash(npm remove *)",
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('./package.json'\\).devDependencies\\).join\\(', '\\)\\)\")",
+      "Bash(xargs kill -9)",
+      "Bash(pkill -f \"tsx.*server/index\")",
+      "Bash(lsof -nP -iTCP:8787 -sTCP:LISTEN)",
+      "Bash(WS_PORT=8799 npx tsx server/index.ts)",
+      "Bash(node --input-type=module -e ' *)",
+      "Bash(/usr/libexec/ApplicationFirewall/socketfilterfw --getglobalstate)",
+      "Bash(defaults read *)"
+    ]
+  }
+}
