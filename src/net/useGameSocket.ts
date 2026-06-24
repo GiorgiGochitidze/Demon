@@ -62,9 +62,19 @@ export function useGameSocket(
   // Build the phone URL from the LAN IP (from the server) + the port this page
   // is actually served on — so it stays correct even if Vite bumped the port.
   const lanUrl = useMemo(() => {
-    if (!lanIp) return "";
-    const port = window.location.port || "5173";
-    return `http://${lanIp}:${port}/props`;
+    const isLocalhost =
+      window.location.hostname === "localhost" ||
+      window.location.hostname === "127.0.0.1";
+
+    if (isLocalhost) {
+      // Local development: use the local IP sent by your local server
+      if (!lanIp) return "";
+      const port = window.location.port || "5173";
+      return `http://${lanIp}:${port}/props`;
+    } else {
+      // Production (Vercel): Use your live website URL so phones can join over the internet!
+      return `${window.location.origin}/props`;
+    }
   }, [lanIp]);
 
   const wsRef = useRef<WebSocket | null>(null);
